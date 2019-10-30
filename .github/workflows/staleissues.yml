@@ -14,3 +14,10 @@ jobs:
           days-before-close: 45
           stale-issue-label: stale
           exempt-issue-label: 'confirmed,approved'
+          stale-issue-message: >
+            'This issue has been automatically marked as stale because it has not had recent activity. If you would like this issue to remain open:
+              * Verify that you can still reproduce the issue in the latest version of dbatools
+              * Comment that the issue is still reproducible and include:
+              * What version of dbatools you reproduced the issue on
+              * What OS and version you reproduced the issue on
+              * What steps you followed to reproduce the issue'
