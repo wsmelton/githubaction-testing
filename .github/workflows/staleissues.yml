@@ -1,0 +1,16 @@
+name: Stale Issues
+on:
+  schedule:
+  - cron: 0 0 * * *
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close stale issues
+        uses: actions/stale@1.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 1
+          days-before-close: 45
+          stale-issue-label: stale
+          exempt-issue-label: 'confirmed,approved'
