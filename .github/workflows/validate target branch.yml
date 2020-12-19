@@ -13,6 +13,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Target branch should be development
         if: github.base_ref != 'refs/heads/development'
+        shell: pwsh
         run: |
-          echo "Target branch of the PR is not set to development"
-          exit 1
+          throw "Target branch not set to development. Found target set to: $($GITHUB.base_ref)"
