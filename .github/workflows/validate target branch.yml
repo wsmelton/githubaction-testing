@@ -13,8 +13,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Target branch should be development
         shell: pwsh
-        if: github.base_ref != 'refs/heads/development'
         run: |
           echo "Base ref is $GITHUB_BASE_REF"
-          echo "Head
-          throw "Target branch set to $GITHUB_BASE_REF and not development"
+          if ($env:GITHUB_BASE_REF -ne 'refs/heads/development') {
+            throw "Target branch set to $GITHUB_BASE_REF and not development"
+          } else {
+            Write-Output "Target branch set to $GITHUB_BASE_REF"
+          }
