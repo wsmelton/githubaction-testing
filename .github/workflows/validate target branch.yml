@@ -15,4 +15,5 @@ jobs:
         if: github.base_ref != 'refs/heads/development'
         shell: pwsh
         run: |
+          Write-Output "Base ref: $GITHUB_BASE_REF"
           throw "Target branch not set to development. Found target set to: $($GITHUB.base_ref)"
