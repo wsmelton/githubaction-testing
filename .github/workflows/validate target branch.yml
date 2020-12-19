@@ -1,4 +1,4 @@
-name: Test Target Branch
+name: Validate Target Branch
 on: [pull_request]
 
 jobs:
