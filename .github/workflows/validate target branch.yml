@@ -14,9 +14,9 @@ jobs:
       - name: Target branch should be development
         shell: pwsh
         run: |
-          echo "Base ref is $GITHUB_BASE_REF"
-          if ($env:GITHUB_BASE_REF -ne 'refs/heads/development') {
-            throw "Target branch set to $GITHUB_BASE_REF and not development"
+          Write-Host "Base ref is $($GITHUB_BASE_REF)"
+          if ($GITHUB_BASE_REF -ne 'refs/heads/development') {
+            throw "Target branch set to $($GITHUB_BASE_REF) and not development"
           } else {
-            Write-Output "Target branch set to $GITHUB_BASE_REF"
+            Write-Output "Target branch set to $($GITHUB_BASE_REF)"
           }
