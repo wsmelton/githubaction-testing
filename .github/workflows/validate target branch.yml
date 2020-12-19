@@ -15,6 +15,6 @@ jobs:
         shell: pwsh
         if: github.base_ref != 'refs/heads/development'
         run: |
-          echo "Base ref is $env:GITHUB_BASE_REF"
+          echo "Base ref is $GITHUB_BASE_REF"
           echo "Head
-          throw "Target branch set to $env:GITHUB_BASE_REF and not development"
+          throw "Target branch set to $GITHUB_BASE_REF and not development"
